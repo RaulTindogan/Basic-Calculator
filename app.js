@@ -25,88 +25,88 @@ let operator = "";
 let reg = /^[0-9]+$/g;
 
 nine.addEventListener('click', ()=>{
-    calcuInput.value+='9';
+    calcuInput.innerHTML+='9';
 });
 
 eight.addEventListener('click', ()=>{
-    calcuInput.value+='8';
+    calcuInput.innerHTML+='8';
 });
 
 seven.addEventListener('click', ()=>{
-    calcuInput.value+='7';
+    calcuInput.innerHTML+='7';
 });
 
 six.addEventListener('click', ()=>{
-    calcuInput.value+='6';
+    calcuInput.innerHTML+='6';
 });
 
 five.addEventListener('click', ()=>{
-    calcuInput.value+='5';
+    calcuInput.innerHTML+='5';
 });
 
 four.addEventListener('click', ()=>{
-    calcuInput.value+='4';
+    calcuInput.innerHTML+='4';
 });
 
 three.addEventListener('click', ()=>{
-    calcuInput.value+='3';
+    calcuInput.innerHTML+='3';
 });
 
 two.addEventListener('click', ()=>{
-    calcuInput.value+='2';
+    calcuInput.innerHTML+='2';
 });
 
 one.addEventListener('click', ()=>{
-    calcuInput.value+='1';
+    calcuInput.innerHTML+='1';
 });
 
 zero.addEventListener('click', ()=>{
-    calcuInput.value+='0';
+    calcuInput.innerHTML+='0';
 });
 
 clearBtn.addEventListener('click', ()=>{
-    calcuInput.value = '';
+    calcuInput.innerHTML = '';
 });
 
 deleteBtn.addEventListener('click', ()=>{
-    let calInput = calcuInput.value;
+    let calInput = calcuInput.innerHTML;
     let newInput = calInput.slice(0, -1);
-    calcuInput.value = newInput;
+    calcuInput.innerHTML = newInput;
 });
 
 add.addEventListener('click', ()=>{
-    const value = calcuInput.value;
+    const value = calcuInput.innerHTML;
     if (value && value.match(reg)) {
         operator = '+';
         firstNum = value;
-        calcuInput.value = '';
+        calcuInput.innerHTML = '';
     } else {
         alert('Invalid Input');
-        calcuInput.value = '';
+        calcuInput.innerHTML = '';
     }
 });
 
 minus.addEventListener('click', ()=>{
-    if (calcuInput.value) {
+    if (calcuInput.innerHTML) {
         operator = '-';
-        firstNum = calcuInput.value;
-        calcuInput.value = '';
+        firstNum = calcuInput.innerHTML;
+        calcuInput.innerHTML = '';
     }
 });
 
 multiply.addEventListener('click', ()=>{
-    if (calcuInput.value) {
+    if (calcuInput.innerHTML) {
         operator = 'x';
-        firstNum = calcuInput.value;
-        calcuInput.value = '';
+        firstNum = calcuInput.innerHTML;
+        calcuInput.innerHTML = '';
     }
 });
 
 divide.addEventListener('click', ()=>{
-    if (calcuInput.value) {
+    if (calcuInput.innerHTML) {
         operator = '÷';
-        firstNum = calcuInput.value;
-        calcuInput.value = '';
+        firstNum = calcuInput.innerHTML;
+        calcuInput.innerHTML = '';
     }
 });
 
@@ -115,34 +115,34 @@ let sNum;
 let result;
 
 equalBtn.addEventListener('click', ()=>{
-    const value = calcuInput.value;
+    const value = calcuInput.innerHTML;
     if (value && value.match(reg)) {
-        secondNum = calcuInput.value;
+        secondNum = calcuInput.innerHTML;
         switch(operator) {
             case '+':
                 fNum = parseInt(firstNum);
                 sNum = parseInt(secondNum);
-                calcuInput.value = result = fNum + sNum;
+                calcuInput.innerHTML = result = fNum + sNum;
                 break;
             case '-':
                 fNum = parseInt(firstNum);
                 sNum = parseInt(secondNum);
-                calcuInput.value = result = fNum - sNum;
+                calcuInput.innerHTML = result = fNum - sNum;
                 break;
             case 'x':
                 fNum = parseInt(firstNum);
                 sNum = parseInt(secondNum);
-                calcuInput.value = result = fNum * sNum;
+                calcuInput.innerHTML = result = fNum * sNum;
                 break;
             case '÷':
                 fNum = parseInt(firstNum);
                 sNum = parseInt(secondNum);
-                calcuInput.value = result = fNum / sNum;
+                calcuInput.innerHTML = result = fNum / sNum;
                 break;
         }
     } else {
         alert('Invalid Input. Please Input Another Number');
-        calcuInput.value = '';
+        calcuInput.innerHTML = '';
     }
 });
 
